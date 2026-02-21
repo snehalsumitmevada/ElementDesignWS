@@ -107,6 +107,142 @@ body {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
+/* ================= HERO SECTION ================= */
+
+.hero {
+    padding: 80px 0;
+    background: #f8f8f8;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ================= HERO SLIDER ================= */
+/* SLIDER CONTAINER */
+.hero {
+    width: 100%;
+    height: 70vh; /* reduce height (adjust 60–75vh as needed) */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slider container */
+.hero-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Each slide 
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}*/
+/* SLIDES */
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+/* Active slide */
+.slide.active {
+    display: block;
+}
+
+/* Image */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* fills container perfectly */
+    display: block;      /* removes bottom gap */
+}
+}
+
+/* Text overlay */
+.hero-overlay {
+    position: absolute;
+    bottom: 80px;
+    right: 60px;
+    color: #fff;
+    text-align: right;
+}
+
+.hero-overlay h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-overlay p {
+    font-size: 18px;
+}
+.hero,
+.hero-slider {
+    padding: 0;
+    margin: 0;
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-overlay {
+        right: 20px;
+        left: 20px;
+        text-align: center;
+    }
+
+    .hero-overlay h1 {
+        font-size: 28px;
+    }
+	
+	.hero {
+        height: 50vh;
+    }
+}
+/* ===== HERO SLIDER ARROWS ===== */
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    font-size: 30px;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Mobile size */
+@media (max-width: 768px) {
+    .slider-btn {
+        font-size: 22px;
+        padding: 8px 12px;
+    }
+}
+
 
 /* ================= ABOUT ================= */
 .about {
@@ -118,9 +254,14 @@ body {
     grid-template-columns: 1fr 2fr; /* photo | content */
     gap: 40px;
     align-items: center;
+	text-align: left;
     margin-top: 30px;
 }
-
+.about-text {
+    text-align: left;
+    max-width: 700px;
+    margin: auto;
+}
 .about-photo {
     display: flex;
     justify-content: center;

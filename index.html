@@ -6,14 +6,14 @@
     <!-- India Local SEO Meta -->
     <!-- <title>Element Design | Architect in India | Residential & Commercial Architecture</title> -->
 	
-	<title>Element Design by Sumit Meveda | Architecture & Interior Design Ahmedabad</title>
+	<title>Element Design | Ar. Sumit Meveda | Architecture & Interior Design Ahmedabad</title>
 	<meta name="google-site-verification" content="sxmrIpXHtBI-o_GKNY0u6wGBrDgifGLNFEJqjQ-SVdA" />
 	<meta name="description"
-	content="Element Design by Sumit Meveda - is a professional architectural firm in India with 15+ years of experience in residential, commercial, and interior architecture. We specialize in spacious, comfortable, and modern design solutions." />
+	content="Element Design - is a professional architectural firm in India with 15+ years of experience in residential, commercial, and interior architecture. We specialize in spacious, comfortable, and modern design solutions." />
 	
      
     <meta name="keywords"
-          content="Element Design, Sumit Mevada, Architect in India, Architectural firm in India, Residential architect, Commercial architect, Interior architect, Modern architecture India, Sustainable architecture, Space planning architect">
+          content="Element Design, Sumit Mevada, Architect in Ahmedabad, Architect in Palanpur, Architect in India, Architectural firm in India, Residential architect, Commercial architect, Interior architect, Modern architecture India, Sustainable architecture, Space planning architect">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -69,16 +69,73 @@
 </header>
 
 <!-- ================= HERO SECTION ================= -->
-<section class="hero" id="home">
-    <div class="hero-content container">
-		<h1>Ar. Sumit Meveda</h1>
-		<h2>Designing Spaces That Inspire</h2>
-        <!-- <h1></h1> -->
-        <p>Modern architectural solutions blending creativity and functionality.</p>
-		<br>
-        <a href="#contact" class="btn-primary">Get in Touch</a>
+<!-- <section class="hero" id="home"> -->
+    <!-- <div class="hero-content container"> -->
+		<!-- <h1>Ar. Sumit Meveda</h1> -->
+		<!-- <h2>Designing Spaces That Inspire</h2> -->
+        <!-- <p>Modern architectural solutions blending creativity and functionality.</p> -->
+		<!-- <br> -->
+        <!-- <a href="#contact" class="btn-primary">Get in Touch</a> -->
+    <!-- </div> -->
+<!-- </section> -->
+<!-- Hero Section -->
+<!-- HERO WITH MOVING PROJECTS -->
+<section class="hero">
+
+    <div class="hero-slider">
+
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <img src="assets/images/project-1.jpg" alt="Modern Residential Project">
+            <div class="hero-overlay">
+                <h1>ELEMENT DESIGN</h1>
+                <p>Architect <strong>SUMIT MEVADA</strong></p>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="assets/images/project-2.jpg" alt="Luxury Villa Design">
+            <div class="hero-overlay">
+                <h1>Innovative Architecture</h1>
+                <p>Modern & Spacious Living</p>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="assets/images/project-3.jpg" alt="Commercial Project">
+            <div class="hero-overlay">
+                <h1>Functional Design</h1>
+                <p>Residential & Commercial Spaces</p>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <img src="assets/images/project-5.jpg" alt="Commercial Project">
+            <div class="hero-overlay">
+                <h1>Minimalist Residential Design</h1>
+                <p>Residential & Commercial Spaces</p>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <img src="assets/images/project-duplex-home.jpg" alt="Commercial Project">
+            <div class="hero-overlay">
+                <h1>Duplex Residential Home</h1>
+                <p>Residential & Commercial Spaces</p>
+            </div>
+        </div>
+
+		 <!-- Navigation Arrows -->
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
     </div>
+
 </section>
+
 
 <!-- ================= ABOUT SECTION ================= -->
 <section class="about container" id="about">
@@ -421,6 +478,37 @@
 
 <!-- JS -->
 <script src="js/script.js"></script>
+
+<script>
+const slides = document.querySelectorAll(".slide");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Auto slide every 4 seconds
+setInterval(nextSlide, 4000);
+
+// Arrow click events
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+</script>
+
 </body>
 </html>
 
